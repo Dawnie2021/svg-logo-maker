@@ -26,6 +26,12 @@ prompt([
    
 }
 
-
-
 ])
+// created a function to create the logo.svg file
+.then((data) => {
+console.log(data);
+if (!fs.existsSync('./logo.svg')) {
+    fs.mkdirSync('./logo.svg');
+}
+});
+
