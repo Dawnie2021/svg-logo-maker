@@ -6,17 +6,17 @@ prompt([
 {
     type: 'input',
     name: 'characters',
-    message: 'Please choose up to three characters',
+    message: 'Enter text for logo. (Must not be more than 3 characters',
 },
 {
     type: 'input',
     name: 'text-color',
-    message: 'Please choose a text color',
+    message: 'Please choose a text color for the logo',
 },
 {
     type: 'checkbox',
     name: 'shape',
-    message: 'Please choose a shape',
+    message: 'Please select a shape for the logo',
     choices: ['Circle', 'Triangle', 'Square'],
 },
 {
