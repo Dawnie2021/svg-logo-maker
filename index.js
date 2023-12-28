@@ -1,7 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-
 const prompt = inquirer.createPromptModule();
+
 prompt([
 {
     type: 'input',
@@ -14,7 +14,7 @@ prompt([
     message: 'Please choose a text color for the logo',
 },
 {
-    type: 'checkbox',
+    type: 'rawlist',
     name: 'shape',
     message: 'Please select a shape for the logo',
     choices: ['Circle', 'Triangle', 'Square'],
@@ -34,4 +34,11 @@ if (!fs.existsSync('./logo.svg')) {
     fs.mkdirSync('./logo.svg');
 }
 });
+
+
+
+
+
+
+// module.exports = Shape;
 
