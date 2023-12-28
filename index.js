@@ -1,12 +1,13 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
+const {Circle, Square, Triangle} = require("./lib/shapes");
 
 prompt([
 {
     type: 'input',
     name: 'characters',
-    message: 'Enter text for logo. (Must not be more than 3 characters',
+    message: 'Enter text for logo. (Must not be more than 3 characters)',
 },
 {
     type: 'input',
@@ -35,10 +36,11 @@ if (!fs.existsSync('./logo.svg')) {
 }
 });
 
+// init()
 
 
 
 
 
-// module.exports = Shape;
+
 
