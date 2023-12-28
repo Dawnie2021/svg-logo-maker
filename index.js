@@ -1,28 +1,30 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+
+
+
 const prompt = inquirer.createPromptModule();
-const {Circle, Square, Triangle} = require("./lib/shapes");
 
 prompt([
 {
     type: 'input',
-    name: 'characters',
+    name: 'text',
     message: 'Enter text for logo. (Must not be more than 3 characters)',
 },
 {
     type: 'input',
-    name: 'text-color',
+    name: 'textColor',
     message: 'Please choose a text color for the logo',
 },
 {
     type: 'rawlist',
     name: 'shape',
     message: 'Please select a shape for the logo',
-    choices: ['Circle', 'Triangle', 'Square'],
+    choices: ['circle', 'triangle', 'square'],
 },
 {
     type: 'input',
-    name: 'shape-color',
+    name: 'color',
     message: 'Please choose a shape color',
    
 }
@@ -35,12 +37,4 @@ if (!fs.existsSync('./logo.svg')) {
     fs.mkdirSync('./logo.svg');
 }
 });
-
-// init()
-
-
-
-
-
-
 
