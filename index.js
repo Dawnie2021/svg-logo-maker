@@ -49,7 +49,7 @@ console.log(logo)
 if (logo !== null) {
     fs.writeFile(`./logos/${data.text}.svg`, logo.render(), function (err) {
         if (err) throw err;
-        console.log('Saved!');
+        console.log('Generated logo.svg');
     })
 }
 
