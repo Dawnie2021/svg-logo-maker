@@ -1,9 +1,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-
+const createShape = require('./lib/shapes')
 
 
 const prompt = inquirer.createPromptModule();
+
+let logo = null;
 
 prompt([
 {
@@ -33,8 +35,27 @@ prompt([
 // created a function to create the logo.svg file
 .then((data) => {
 console.log(data);
-if (!fs.existsSync('./logo.svg')) {
-    fs.mkdirSync('./logo.svg');
+
+// create logo directory if it doesn't exist
+if (!fs.existsSync('./logos')) {
+    fs.mkdirSync('./logos');
 }
-});
+
+// create shape object
+logo = createShape(data.shape, data.text, data.color, data.textColor);
+
+console.log(logo)
+
+if (logo !== null) {
+    fs.writeFile(`./logos/${data.text}.svg`, logo.render(), function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    })
+}
+
+
+
+
+
+})
 
