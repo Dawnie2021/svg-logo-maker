@@ -10,6 +10,7 @@ prompt([
         type: 'input',
         name: 'text',
         message: 'Enter text for logo. (Must not be more than 3 characters)',
+        validate: (value) => value.length <= 3 ? true : 'Must not be more than 3 characters',
     },
     {
         type: 'input',
